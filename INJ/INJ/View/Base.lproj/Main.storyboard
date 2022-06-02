@@ -60,6 +60,9 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="scanBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4QT-n7-d7p"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -79,6 +82,9 @@
                             <constraint firstItem="BCG-hl-CE1" firstAttribute="top" secondItem="B9Z-uq-G0U" secondAttribute="bottom" constant="30" id="zXq-TM-lBA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="readView" destination="BCG-hl-CE1" id="hDs-Jp-r9y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
