@@ -10,7 +10,7 @@ import AVFoundation
 import MobileCoreServices
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    @IBOutlet weak var readView: UIView!
+    @IBOutlet weak var readView: UIImageView!
     
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     var captureImage: UIImage!
@@ -53,7 +53,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             
             readView.image = captureImage
         }
+        else if mediaType.isEqual(to: kUTTypeMovie as NSString as String) {
+            if flagImgaveSave {
+                UIImageWriteToSavedPhotosAlbum(captureImage, self, nil, nil)
+            }
+        }
         
+        
+        self.dismiss(animated: true, completion: nil)
     }
 
     
