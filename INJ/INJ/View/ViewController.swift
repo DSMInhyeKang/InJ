@@ -39,9 +39,22 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
-//    func imagePickerController(_picker: UIImagePickerController, didFinishPickingMediaWithInfo infor: UIImagePickerController.InfoKey : Any) {
-//        <#function body#>
-//    }
+    func imagePickerController(_picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! NSString
+        
+        
+        if mediaType.isEqual(to: kUTTypeImage as NSString as String) {
+            captureImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+            
+            
+            if flagImgaveSave {
+                UIImageWriteToSavedPhotosAlbum(captureImage, self, nil, nil)
+            }
+            
+            readView.image = captureImage
+        }
+        
+    }
 
     
     func myAlert(_title: String, message: String) {
