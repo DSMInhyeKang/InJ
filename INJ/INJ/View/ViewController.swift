@@ -53,12 +53,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             
             readView.image = captureImage
         }
-        else if mediaType.isEqual(to: kUTTypeMovie as NSString as String) {
-            if flagImgaveSave {
-                UIImageWriteToSavedPhotosAlbum(captureImage, self, nil, nil)
-            }
-        }
-        
+//        else if mediaType.isEqual(to: kUTTypeMovie as NSString as String) {
+//            if flagImgaveSave {
+//                UIImageWriteToSavedPhotosAlbum(captureImage, self, nil, nil)
+//            }
+//        }
+//
         
         self.dismiss(animated: true, completion: nil)
     }
